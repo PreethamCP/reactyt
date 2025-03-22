@@ -1,15 +1,27 @@
 import React, { useState } from "react";
 
 const App = () => {
+  const [username, setUsername] = useState("Preetham learning React");
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("Submitted:", username);
+    setUsername("");
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={submitHandler}>
         <input
-          className=" bg-white text-black px-4 py-4 m-4 w-50 h-10 flex flex-row"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="bg-white text-black px-4 py-2 m-4 w-50 h-10 rounded border"
           type="text"
           placeholder="Enter your name"
         />
-        <button className="px-4 py-4 m-2 bg-green-500">Submit</button>
+        <button className="m-5 rounded px-3 py-2 text-white bg-lime-400">
+          Submit
+        </button>
       </form>
     </div>
   );
