@@ -1,27 +1,16 @@
 import React, { useState } from "react";
 
 const App = () => {
-  var user = "Preetham";
-
-  const [num, setNum] = useState(10);
-
   return (
     <div>
-      <h1>number is {num}</h1>
-      <button
-        onClick={() => {
-          setNum(num + 10);
-        }}
-      >
-        Increment
-      </button>
-      <button
-        onClick={() => {
-          setNum(num - 10);
-        }}
-      >
-        Decremnt
-      </button>
+      <form>
+        <input
+          className=" bg-white text-black px-4 py-4 m-4 w-50 h-10 flex flex-row"
+          type="text"
+          placeholder="Enter your name"
+        />
+        <button className="px-4 py-4 m-2 bg-green-500">Submit</button>
+      </form>
     </div>
   );
 };
